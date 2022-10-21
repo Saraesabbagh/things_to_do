@@ -8,6 +8,7 @@ export const AddTodo = () => {
         <input name="title" placeholder="give your todo a title" />
         <input name="description" placeholder="what is the todo" />
         <input name="done?" placeholder="is it done? Yes or no" />
+        <input type="submit" value="add"/>
       </form>
     </div>
   );
