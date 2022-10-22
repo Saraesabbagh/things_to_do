@@ -16,8 +16,8 @@ export const IndexPage = () => {
     <div>
       <h1>Hi welcome to your Todos!</h1>
       <h3>Never forget a job again</h3>
-      <button onclick={navigateToLogin}>Login</button>
-      <button onclick={navigateToSignup}>Signup</button>
+      <button onClick={navigateToLogin}>Login</button>
+      <button onClick={navigateToSignup}>Signup</button>
     </div>
   )
 };
