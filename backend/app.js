@@ -7,6 +7,7 @@ const app = express();
 connectDB();
 
 app.get("/", (req, res) => res.send("Hello world!"));
+app.get("/list")
 
 const port = 8082;
 

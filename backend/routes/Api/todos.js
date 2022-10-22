@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
 // @route GET api/todos
 // @description add/save todo
 // @access Public
-router.post('/', (req, res) => {
+router.post('/api/todos', (req, res) => {
   Todo.create(req.body)
     .then(todo => res.json({ msg: 'Todo added successfully' }))
     .catch(err => res.status(400).json({ error: 'Unable to add this todo' }));
