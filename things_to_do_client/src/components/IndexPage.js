@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 export const IndexPage = () => {
   const navigate = useNavigate();
-  const navigateToLogin=()=>{
+  
+  const navigateToLogin = () => {
     navigate('/session/new');
   }
 
-  const navigateToSignup=()=>{
+  const navigateToSignup = () => {
     navigate('/user/new');
   }
 
@@ -18,5 +19,5 @@ export const IndexPage = () => {
       <button onclick={navigateToLogin}>Login</button>
       <button onclick={navigateToSignup}>Signup</button>
     </div>
-  );
-}
+  )
+};
