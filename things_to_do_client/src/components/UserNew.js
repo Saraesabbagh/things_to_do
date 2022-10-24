@@ -2,37 +2,36 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 export const UserNew = () => {
-
-  const whenSubmit = (event) =>{
+  const whenSubmit = (event) => {
     event.preventDefault();
 
-    const name=event.target.name;
-    const email=event.target.email;
-    const password=event.target.password;
-    fetch("/api/signup", {
+    const name = event.target.name;
+    const email = event.target.email;
+    const password = event.target.password;
+    fetch("/api/users/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name:name.value,
+        name: name.value,
         email: email.value,
         password: password.value,
       }),
     })
-    .then((response) => response.json())
-    .then((json) => {
-     if (json.message === "User registered!"){
-      window.alert("Signup Successful!");
-      Navigate("/session/new");
-     } else {
-      window.alert(json.message)
-     }
-  })
-  .catch((error)=>{
-    console.error("Error", error);
-  });
-};
+      .then((response) => response.json())
+      .then((json) => {
+        if (json.message === "User registered!") {
+          window.alert("Signup Successful!");
+          Navigate("/session/new");
+        } else {
+          window.alert(json.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error", error);
+      });
+  };
 
   return (
     <div>

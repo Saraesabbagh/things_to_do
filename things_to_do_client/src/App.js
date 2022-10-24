@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<IndexPage />} />
           <Route path="/session/new" element={<SessionNew />} />
-          <Route path="/user/new" element={<UserNew/>} />
+          <Route path="/users/new" element={<UserNew />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/new" element={<AddTodo />} />
           <Route path="/list" element={<ListTodo />} />
