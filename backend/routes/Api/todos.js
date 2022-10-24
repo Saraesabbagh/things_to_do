@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Todos= require('../../models/Todos');
+const Todos= require('../../models/todos');
 
 // @route GET api/todos/test
 // @description tests todos route

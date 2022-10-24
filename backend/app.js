@@ -5,6 +5,7 @@ var cors = require("cors");
 
 // routes
 const users = require("./routes/api/users");
+const todos= require(".routes/api/todos");
 
 const app = express();
 
@@ -19,10 +20,14 @@ app.use(bp.urlencoded({ extended: true }));
 app.use(cors({ origin: true, credentials: true }));
 
 // routes
-
+// users
 app.get("/", (req, res) => res.send("Hello world!"));
 
 app.use("/api/users", users);
+
+// todos
+app.use("/api/todos", todos);
+
 
 const port = 8082;
 
