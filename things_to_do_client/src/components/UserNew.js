@@ -21,7 +21,7 @@ export const UserNew = () => {
     })
       .then((response) => response.json())
       .then((json) => {
-        if (json.message === "User registered!") {
+        if (json.message === "User added successfully") {
           window.alert("Signup Successful!");
           Navigate("/session/new");
         } else {
@@ -38,8 +38,8 @@ export const UserNew = () => {
       <h1>Signup to an account</h1>
       <form onSubmit={whenSubmit}>
         <input name="Name" placeholder="Type in your first name" />
-        <input email="Email" placeholder="Type in your email" />
-        <input password="Password" placeholder="Password" />
+        <input name="Email" type="email" placeholder="Type in your email" />
+        <input name="Password" type ="password" placeholder="Password" />
         <input type="Submit" value="Signup" />
       </form>
     </div>

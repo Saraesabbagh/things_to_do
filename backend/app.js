@@ -5,7 +5,7 @@ var cors = require("cors");
 
 // routes
 const users = require("./routes/api/users");
-const todos= require(".routes/api/todos");
+const todos = require("./routes/api/todos");
 
 const app = express();
 
@@ -27,7 +27,6 @@ app.use("/api/users", users);
 
 // todos
 app.use("/api/todos", todos);
-
 
 const port = 8082;
 
