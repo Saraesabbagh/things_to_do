@@ -8,7 +8,7 @@ export const UserNew = () => {
 
     const name=event.target.name;
     const email=event.target.email;
-    const password=event.targe.password;
+    const password=event.target.password;
     fetch("/api/signup", {
       method: "POST",
       headers: {
