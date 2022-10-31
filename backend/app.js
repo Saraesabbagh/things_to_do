@@ -8,6 +8,9 @@ const users = require("./routes/api/users");
 const todos = require("./routes/api/todos");
 
 const app = express();
+var corsOptions = {
+  origin: "http://localhost:3000",
+};
 
 // Connect Database
 connectDB();
