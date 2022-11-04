@@ -1,12 +1,15 @@
 const express = require("express");
+const mongoose = require('mongoose');
 const connectDB = require("./config/db");
-const bp = require("body-parser");
+const bodyParser = require("body-parser");
 var cors = require("cors");
+require("dotenv").config();
 
 // routes
-const users = require("./routes/api/users");
+// const users = require("./routes/api/users");
+const authRoutes =require("./routes/auth");
 const todos = require("./routes/api/todos");
-
+//app
 const app = express();
 var corsOptions = {
   origin: "http://localhost:3000",
@@ -15,18 +18,18 @@ var corsOptions = {
 // Connect Database
 connectDB();
 
-// use body-parser
-app.use(bp.json());
-app.use(bp.urlencoded({ extended: true }));
+// middlewares/ use body-parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // cors
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors());
 
 // routes
 // users
 app.get("/", (req, res) => res.send("Hello world!"));
 
-app.use("/api/users", users);
+app.use("/api", authRoutes);
 
 // todos
 app.use("/api/todos", todos);

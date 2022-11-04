@@ -1,4 +1,5 @@
-const mongoose= require('mongoose');
+// const mongoose= require('mongoose');
+import mongoose from 'mongoose'
 import bcrypt from 'bcrypt';
 
 const UserSchema= new mongoose.Schema({
@@ -15,7 +16,7 @@ UserSchema.pre('save', function(next){
       if (saltError){
         return next(saltError);
       } else {
-        bcrypt.hash(user.password, sale, function(hashError, hash) {
+        bcrypt.hash(user.password, salt, function(hashError, hash) {
           if (hashError){
             return next(hashError);
           }
@@ -30,4 +31,4 @@ UserSchema.pre('save', function(next){
   }
 });
 
-module.exports=User=mongoose.model('user', UserSchema);
+module.exports = mongoose.model("user", UserSchema);
